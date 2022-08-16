@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atyyx.ssm.mapper.EmpMapper">
+    <!--
+    1.type指定二级缓存采用的类型
+    2.eviction指定缓存回收的机制
+    3.readonly
+    4.flushInterval指定刷新的时间
+    -->
+    <cache eviction="LRU"
+           flushInterval="1000" readOnly="true"/>  <!--通过这个标签来说明开启二级缓存功能-->
+
+    <sql id="tEmpColumn">
+        emp_id as "empId",
+        emp_name as "empName",
+        age as "age",
+        sex as "sex",
+        email  as "email"
+    </sql>
+
+
+    <!-- List<Emp> getAllEmps();-->
+    <select id="getAllEmps" resultType="com.atyyx.ssm.pojo.Emp">
+        select
+          <include refid="tEmpColumn"></include>
+        from t_emp
+    </select>
+</mapper>
