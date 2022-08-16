@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>sucess</title>
+</head>
+<body>
+<h1>成功</h1>
+<table border="1">
+    <tr>
+        <th align="center" colspan="7">员工信息列表</th>
+    </tr>
+    <tr align="center">
+        <th>序列号</th>
+        <th>员工编号</th>
+        <th>员工姓名</th>
+        <th>员工年龄</th>
+        <th>员工性别</th>
+        <th>员工邮箱</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="emp,status : ${emps}" align="center">
+        <td>[[${status.count}]]</td>
+        <td>[[${emp.empId}]]</td>
+        <td>[[${emp.empName}]]</td>
+        <td>[[${emp.age}]]</td>
+        <td>[[${emp.sex}]]</td>
+        <td>[[${emp.email}]]</td>
+        <td>
+            <a href="">update</a>
+            <a href="">delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
