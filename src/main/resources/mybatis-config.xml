@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- mybatis的主配置文件 -->
+<configuration>
+
+    <settings><!--将下划线映射成驼峰-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+
+
+<!--    <properties resource="jdbc.properties"/>-->
+<!--    <typeAliases>  &lt;!&ndash;指定这个包名下面都是实体类，指定报名下面的都具有实体类&ndash;&gt;-->
+<!--        <package name=""/>-->
+<!--    </typeAliases>-->
+<!--    <plugins>-->
+<!--        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>-->
+<!--    </plugins>-->
+    <!-- 配置环境 -->
+<!--    <environments default="mysql">-->
+<!--        &lt;!&ndash; 配置mysql的环境&ndash;&gt;-->
+<!--        <environment id="mysql">-->
+<!--            &lt;!&ndash; 配置事务的类型&ndash;&gt;-->
+<!--            <transactionManager type="JDBC"/>-->
+<!--            &lt;!&ndash; 配置数据源（连接池） &ndash;&gt;-->
+<!--            <dataSource type="POOLED">-->
+<!--                &lt;!&ndash; 配置连接数据库的4个基本信息 &ndash;&gt;-->
+<!--                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--                <property name="url" value="jdbc:mysql://localhost:3306/jdbc"/>-->
+<!--                <property name="username" value="root"/>-->
+<!--                <property name="password" value="123456"/>-->
+<!--            </dataSource>-->
+
+<!--        </environment>-->
+<!--    </environments>-->
+
+    <!--配置分页插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+
+
+
+    <!-- 指定映射配置文件的位置，映射配置文件指的是每个dao独立的配置文件 -->
+<!--    <mappers>-->
+<!--        <package name=""/>-->
+<!--    </mappers>-->
+</configuration>
